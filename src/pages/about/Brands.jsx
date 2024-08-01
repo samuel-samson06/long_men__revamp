@@ -11,7 +11,7 @@ function Brands() {
                     Savor the rich flavors of our single malt scotch whisky, expertly crafted by William Grant & Sons. Please enjoy in moderation
                 </article>
                 <main>
-                    <img className=' w-56' src={balvenie} alt="Balvenie Whisky"/>
+                    <img className=' w-56' loading='lazy' src={balvenie} alt="Balvenie Whisky"/>
                 </main>
             </section>
         </div>

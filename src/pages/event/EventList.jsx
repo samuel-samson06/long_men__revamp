@@ -21,7 +21,7 @@ function EventList() {
             event_images.map(function(image){
                 return (
                     <section key={image.id}>
-                        <img className='rounded-md min-[430px]:w-60 min-[560px]:w-72 md:w-64 w-52' src={image.image} alt="Events" />
+                        <img className='rounded-md min-[430px]:w-60 min-[560px]:w-72 md:w-64 w-52' loading='lazy' src={image.image} alt="Events" />
                     </section>
                 )
             })
