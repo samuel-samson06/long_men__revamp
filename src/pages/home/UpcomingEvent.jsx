@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import upcoming_event from "../../assets/event4.webp"
-import "react-datepicker/dist/react-datepicker.css"
-import Calendar from 'react-calendar'
-import "react-calendar/dist/Calendar.css"
+import video from "../../assets/longmen_video.mp4"
 
 function UpcomingEvent() {
-  const [date, setdate] = useState(new Date("2023-10-26"))
   return (
-    <React.Fragment>
-      <div>
-        <p className=' py-3 underline font-semibold text-center text-xl'>Upcoming Event</p>
-        <div className=' px-5 flex items-center flex-col gap-5'>
-          <img src={upcoming_event} alt=""  loading={"lazy"}/>
-          <Calendar value={date} onChange={()=> null} minDate={null} maxDate={null}/>
-        </div>
-      </div><br />
+    <React.Fragment><br/>
+      <div className=' bg-gray-200'>
+        <p className=' py-3 underline font-semibold text-center text-xl'>Events</p>
+        <div className=' min-[550px]:flex-row min-[550px]:h-fit min-[550px]:relative justify-around md:justify-evenly  px-5 flex flex-col-reverse items-center  gap-5'>
+          <img src={upcoming_event} alt="" className=' md:w-72 w-60 h-full  rounded-md'  loading={"lazy"}/>
+          <video src={video} controls  className=" w-52 rounded"/>
+        </div><br />
+      </div>
     </React.Fragment>
   )
 }

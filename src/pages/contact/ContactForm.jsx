@@ -7,7 +7,7 @@ function ContactForm() {
             <div>
                 <header className=" text-center font-semibold text-lg underline">Send Us A direct Message</header>
                 <br />
-                <main className=" bg-gray-200 py-3 px-2 mx-2 rounded-md">
+                <main className=" bg-gray-200 py-3 md:px-5 max-sm:mx-6 px-2 mx-2 rounded-md">
                     <form action="" className=" flex flex-col gap-5 py-1">
                         <input type={"text"} className={` outline-none border-b-[2px] bg-gray-200 placeholder:font-semibold placeholder: border-b-black py-2 px-2 font-medium`} placeholder="Your Name"/>
                         <input type={"tel"} className={` outline-none border-b-[2px] bg-gray-200 placeholder:font-semibold placeholder: border-b-black py-2 px-2 font-medium`} placeholder="Your Phone Number"/>
