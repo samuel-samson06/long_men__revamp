@@ -22,7 +22,7 @@ function Main(){
                         <section className=" flex gap-5 items-center">
                             <p className=" text-xl font-semibold">Phone:</p>
                             <aside className=" border-b-2 px-2 border-white py-1 w-fit  text-lg font-semibold flex items-center gap-2">
-                                <a href="tel:+07010815506" className="flex items-center gap-2"><span>Place a Call</span><FaPhoneVolume/></a>
+                                <a href="tel:07010815506" className="flex items-center gap-2"><span>Place a Call</span><FaPhoneVolume/></a>
                             </aside>
                         </section>
                         <section className=" flex gap-5 items-center">

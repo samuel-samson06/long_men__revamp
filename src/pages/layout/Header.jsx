@@ -12,7 +12,7 @@ function Header() {
             <div className=' flex justify-between items-center border-b-2 border-white py-2 px-4 bg-[#131b34]'>
                 <section>
                     <NavLink to={"/"}>
-                        <img  src={logo} className=' w-28 sm:w-32' alt="Long men Logo" />
+                        <img  src={logo} className=' w-28 sm:w-32' loading='lazy' alt="Long men Logo" />
                     </NavLink>
                 </section>
                 <section>
