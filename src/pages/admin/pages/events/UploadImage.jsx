@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+/* eslint-disable react/prop-types */
+import React from 'react'
 
-function UploadImage() {
-  const [fileImage, setFileImage ] = useState('')
+function UploadImage({setFile,fileImage,setFileImage}) {
 
 
   function handleDisplayImagePreview(e){
     setFileImage(URL.createObjectURL(e.target.files[0]));
+    setFile(e.target.files[0])
   }
   const cancelImagePreview = ()=>{
     setFileImage('')
+    setFile('')
   }
 
   return (
