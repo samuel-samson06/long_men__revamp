@@ -3,7 +3,6 @@ import React from 'react'
 
 function UploadImage({setFile,fileImage,setFileImage}) {
 
-
   function handleDisplayImagePreview(e){
     setFileImage(URL.createObjectURL(e.target.files[0]));
     setFile(e.target.files[0])

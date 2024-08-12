@@ -1,20 +1,19 @@
 import React,{useEffect, useState} from 'react'
-import { createPartner } from '../../firebase';
+import { createPartner, deletePartner, gettingPartners } from '../../firebase';
 
 function Partners() {
   const [brand, setBrand] = useState({brand_name:"", description:"",imageUrl:""});
   const [file,setFile] = useState("")
   const [imagePreview,setImagePreivew] = useState("")
   const [inputFieldEmpty, setInputFieldEmpty] = useState(false)
+  const [partnersList, setPartnersList] = useState([])
+
 
   const submitUpload = (e)=>{
     if(brand.brand_name.length==0 || brand.description.length==0||imagePreview.length==0){
-      console.log("Empty Fields")
       setInputFieldEmpty(true)
     }else{
       e.preventDefault()
-      console.log(file);
-      console.log(brand);
       setBrand({brand_name:"", description:"",imageUrl:""})
       setFile("")
       setImagePreivew("")
@@ -33,6 +32,18 @@ function Partners() {
     }
   },[inputFieldEmpty])
 
+  useEffect(()=>{
+    const partner_data = async ()=>{
+        try{
+            const data = await gettingPartners()
+            setPartnersList(data)
+        }catch(error){
+            console.log(error);
+        }
+    }
+    partner_data()
+},[])
+
   const handleInputChanges = (e)=>{
     e.preventDefault();
     setBrand({
@@ -40,6 +51,14 @@ function Partners() {
       [e.target.name]:e.target.value
     })
 
+  }
+
+  const handleDelete = async (id) => {
+    try {
+      await deletePartner(id);
+    } catch (error) {
+      console.error(`Error deleting partner with ID ${id}: ${error.message}`);
+    }
   }
 
   const cancelImagePreview = ()=>{
@@ -76,8 +95,25 @@ function Partners() {
             </label>
           </form>
           <section className=' flex items-center justify-center'>
-            <button onClick={submitUpload} className=' bg-[#131b34] px-4 py-1 font-semibold text-white rounded'>Upload Partner</button>
+            <button onClick={submitUpload} className='bg-[#131b34] px-4 py-1 font-semibold text-white rounded'>Upload Partner</button>
           </section>
+        </div>
+        <div className=' gap-5 py-5 flex flex-col items-center justify-center md:grid md:grid-cols-2 '>
+        {
+                partnersList.length==0?<p></p>:
+                partnersList.map((each_partner,index)=>{
+                    return(
+                        <div key={index+"##$$"} className='  bg-gray-200 mx-10 my-2 rounded-t-md px-5 py-4'>
+                            <h1 className=' text-center text-lg font-semibold py-2 px-1'>{each_partner.brand_name}</h1>
+                            <section className=' md:items-center md:gap-10 md:justify-center flex flex-col gap-3 items-center text-center'>
+                                <article className=' md:w-60 md:text-lg md:leading-7  text-sm font-semibold'>{each_partner.description}</article>
+                                <main><img className=' w-56' loading='lazy' src={each_partner.imageUrl} alt={each_partner.brand_name}/></main>
+                                <button className=' bg-red-500 text-white rounded-md py-1 px-2' onClick={()=>{handleDelete(each_partner.id)}}>Delete Partner</button>
+                            </section>
+                        </div>
+                    )
+                })
+            }
         </div>   
     </React.Fragment>
   )

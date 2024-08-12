@@ -52,26 +52,6 @@ function UpcomingEvent() {
           console.log(error)
         }
       }
-      // const check_update = async function(){
-      //   try{
-      //     const file_updated  = await upcoming_event(eventsForm);
-      //     return file_updated;
-      //   }catch(error){
-      //     console.log(error)
-      //   }
-      // }
-      
-      // const check_image = async function(){
-      //   try{
-      //     const image_uploaded  = await uploadImage(file);
-      //     return image_uploaded;
-      //   }catch(error){
-      //     console.log(error)
-      //   }
-      // }
-
-      // check_update()
-      // check_image()
       upcomingEvent()
       
       setEventsForm({event_name:"",event_date:"",event_time:"",event_location:"",event_description:""})

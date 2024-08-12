@@ -2,7 +2,6 @@ import React, {  useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import image from "../../../../assets/contact_img.jpg"
 import { today } from '../../utils/date';
-import UploadsAmount from './UploadsAmount';
 
 function AdminDashboard() {
     let date=new Date();
@@ -39,9 +38,6 @@ function AdminDashboard() {
                         </main>
                       </section>
                     </div>
-                <section >
-                  <UploadsAmount/>
-                </section>
                 <div className=' px-4 font-[monospace]'>
                   <button onClick={handleReturn} className=" bg-gray-700 text-white text-lg max-sm:text-base py-1 rounded font-semibold px-3 w-fit ">Logout</button>
                   <p className=" text-center font-black ">Longmen &copy;</p>
