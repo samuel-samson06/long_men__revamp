@@ -12,6 +12,7 @@ function UpcomingEvent() {
       const upcomingEvent = async()=>{
         try{
           const response = await gettingUpcomingEvent()
+          console.log(response)
           setUpcomingEvent([response]);
         }catch(error){
           console.log(error);
@@ -26,14 +27,14 @@ function UpcomingEvent() {
         <p className=' py-3 underline text-white font-semibold capitalize text-center text-xl'>Upcoming Events</p>
         {/* Loading Data */}
         {
-          upcoming_event[0]===undefined?
+          upcoming_event[0]==undefined?
           <LoadingUpcomingEvent/>:
           <div>
             {
               upcoming_event.map((event,index)=>{
                 return(
                   <section key={index+"#1s$"}>
-                    <DisplayEvent event={event}/>
+                    {event.event_name.length!=0&&<DisplayEvent event={event}/>}
                   </section>
                 )
               })

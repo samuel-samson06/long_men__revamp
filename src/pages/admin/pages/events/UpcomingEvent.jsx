@@ -40,23 +40,25 @@ function UpcomingEvent() {
     if (fileImage.length==0 || event_name.length==0 || event_time.length==0 || event_description.length==0 || event_date.length==0 || event_location.length==0){
       setInputFieldEmpty(true)
     }else{
-      const upcomingEvent =  async ()=>{
-        try{
-          const event = await upcoming_event(eventsForm,file);
-          setUploadedMessage("Upload Successful")
-          setUploaded(true)
-          return event        
-        }catch(error){
-          setUploaded(true)
-          setUploadedMessage("Upload Unsuccessful")
-          console.log(error)
+      if(navigator.onLine){
+        const upcomingEvent =  async ()=>{
+          try{
+            const event = await upcoming_event(eventsForm,file);
+            setUploadedMessage("Upload Successful")
+            setUploaded(true)
+            return event        
+          }catch(error){
+            setUploaded(true)
+            setUploadedMessage("Upload Unsuccessful")
+            console.log(error)
+          }
         }
+        upcomingEvent()
+        
+        setEventsForm({event_name:"",event_date:"",event_time:"",event_location:"",event_description:""})
+        setFileImage('')
+        setFile('')
       }
-      upcomingEvent()
-      
-      setEventsForm({event_name:"",event_date:"",event_time:"",event_location:"",event_description:""})
-      setFileImage('')
-      setFile('')
     }
   }
   return (

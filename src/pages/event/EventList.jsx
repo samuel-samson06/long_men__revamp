@@ -46,7 +46,7 @@ function EventList() {
        </div>
        <div className="bg-gray-200 px-2 grid grid-cols-2 md:grid-cols-3 md:justify-evenly md:flex-row gap-8  items-center py-5">
         {eventList.length === 0 ? (
-          <p>Okay</p>
+          <p></p>
         ) : (
           eventList.map((img) => (
             <section className=' flex flex-col items-center justify-center
