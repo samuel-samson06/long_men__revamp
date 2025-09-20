@@ -11,7 +11,7 @@ import Partners from "./pages/admin/pages/media/Partners"
 import AdminDashboard from './pages/admin/pages/dashboard/AdminDashboard'
 import UpcomingEvent from './pages/admin/pages/events/UpcomingEvent'
 
-function longmen() {
+function Longmen() {
   return (
     <React.Fragment>
         <BrowserRouter>
@@ -34,6 +34,6 @@ function longmen() {
   )
 }
 
-export default longmen
+export default Longmen
 
 // bg-[#131b34]- Base Colour

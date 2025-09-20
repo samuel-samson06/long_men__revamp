@@ -9,7 +9,7 @@ function Header() {
     <React.Fragment>
         <div>
             <span className=' md:hidden'><NavigationPhone/></span>
-            <div className=' flex justify-between items-center border-b-2 border-white py-2 px-4 bg-[#131b34]'>
+            <div className=' flex justify-between items-center  border-white py-5 px-5 bg-[#2D1810]'>
                 <section>
                     <NavLink to={"/"}>
                         <img  src={logo} className=' w-28 sm:w-32' loading='lazy' alt="Long men Logo" />

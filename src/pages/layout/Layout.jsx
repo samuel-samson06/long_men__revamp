@@ -7,15 +7,12 @@ function Layout() {
   return (
     <React.Fragment>
         <div className=' flex flex-col min-h-screen'>
-            <header>
-                <Header/>
-            </header>
+            <Header/>
             <main className=' flex-grow'>
                 <Outlet/>
             </main>
-            <footer>
-                <Footer/>
-            </footer>
+            <Footer/>
+            
         </div>
     </React.Fragment>
   )

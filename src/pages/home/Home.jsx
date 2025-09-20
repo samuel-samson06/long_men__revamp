@@ -1,15 +1,15 @@
 import React from 'react'
-import UpcomingEvent from './UpcomingEvent'
+import Events from './Events'
 import Focus from './Focus'
-import HomeBanner from './HomeBanner'
+import HeroSection from '../../components/HeroSection'
 function Home() {
   return (
     <React.Fragment>
         <div>
             <main>
-                <HomeBanner/>
+                <HeroSection/>
+                <Events/>
                 <Focus/>
-                <UpcomingEvent/>
             </main>
 
         </div>
