@@ -2,40 +2,61 @@ import {FaInstagram,FaWhatsapp} from "react-icons/fa"
 import {HiOutlineMail} from "react-icons/hi"
 import {FaPhoneVolume} from "react-icons/fa6"
 
-import React from "react"
-function Main(){
-    return (
-        <React.Fragment>
-            <div>
-                <div>
-                    <section className=' bg-black bg-opacity-80 text-white text-base  px-3 py-4 flex flex-col gap-5'>
-                        <h1 className=' font-semibold text-2xl text-center'>Contact Us</h1>
-                        <br />
-                    <aside className=" space-y-3 lg:px-5">
-                        <section className=" flex gap-5">
-                            <p className=" font-semibold text-xl f">Socials:</p>
-                            <aside className="flex items-center font-semibold gap-3 text-xl">
-                                <span><a href="https://www.instagram.com/longmenafr/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="><FaInstagram/></a></span>
-                                <span><a href="https://wa.link/jf3ch6"><FaWhatsapp/></a></span>
-                            </aside>
-                        </section>
-                        <section className=" flex gap-5 items-center">
-                            <p className=" text-xl font-semibold">Phone:</p>
-                            <aside className=" border-b-2 px-2 border-white py-1 w-fit  text-lg font-semibold flex items-center gap-2">
-                                <a href="tel:07010815506" className="flex items-center gap-2"><span>Place a Call</span><FaPhoneVolume/></a>
-                            </aside>
-                        </section>
-                        <section className=" flex gap-5 items-center">
-                            <p className=" text-xl font-semibold">Email:</p>
-                            <aside className=" border-b-2 px-2 border-white py-1 w-fit text-lg font-semibold flex items-center gap-2">
-                                <a href="mailto:Okaforlotanna@gmail.com" className="flex items-center gap-2">Send Us A direct mail<span><HiOutlineMail/></span></a>                                
-                            </aside>
-                        </section>
-                    </aside><br />
-                </section>
-            </div>
-            </div>
-        </React.Fragment>
-    )
+function Main() {
+  return (
+    <div className="text-white">
+      <section className="bg-black/70 px-6 py-20 md:px-10 rounded-md space-y-6">
+        <h1 className="text-3xl font-serif font-semibold text-center text-gold-500">
+          Contact Us
+        </h1>
+
+        {/* Socials */}
+        <div className="flex items-center gap-5">
+          <p className="font-semibold text-xl">Socials:</p>
+          <div className="flex gap-4 text-2xl">
+            <a
+              href="https://www.instagram.com/longmenafr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold-400"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://wa.link/jf3ch6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold-400"
+            >
+              <FaWhatsapp />
+            </a>
+          </div>
+        </div>
+
+        {/* Phone */}
+        <div className="flex items-center gap-5">
+          <p className="font-semibold text-xl">Phone:</p>
+          <a
+            href="tel:07010815506"
+            className="border-b-2 border-white pb-1 flex items-center gap-2 hover:text-gold-400"
+          >
+            Place a Call <FaPhoneVolume />
+          </a>
+        </div>
+
+        {/* Email */}
+        <div className="flex items-center gap-5">
+          <p className="font-semibold text-xl">Email:</p>
+          <a
+            href="mailto:Okaforlotanna@gmail.com"
+            className="border-b-2 border-white pb-1 flex items-center gap-2 hover:text-gold-400"
+          >
+            Send Us A Mail <HiOutlineMail />
+          </a>
+        </div>
+      </section>
+    </div>
+  );
 }
+
 export default Main

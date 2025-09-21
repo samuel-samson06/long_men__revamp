@@ -1,55 +1,59 @@
-import React, { useEffect, useState } from 'react'
-import balvenie from "../../assets/balvenie.jpg"
-import { gettingPartners } from '../admin/firebase'
+// Brands.jsx
+import { useEffect, useState } from "react";
+import balvenie from "../../assets/balvenie.jpg";
+import { gettingPartners } from "../admin/firebase";
 
 function Brands() {
-    const [partnersList, setPartnersList] = useState([])
+  const [partnersList, setPartnersList] = useState([]);
 
-    useEffect(()=>{
-        const partner_data = async ()=>{
-            try{
-                const data = await gettingPartners()
-                setPartnersList(data)
-            }catch(error){
-                console.log(error);
-            }
-        }
-        partner_data()
-    },[])
+  useEffect(() => {
+    const partner_data = async () => {
+      try {
+        const data = await gettingPartners();
+        setPartnersList(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    partner_data();
+  }, []);
+
+  const defaultPartners = [
+    {
+      brand_name: "The Balvenie",
+      imageUrl: balvenie,
+      description:
+        "Savor the rich flavors of our single malt scotch whisky, expertly crafted by William Grant & Sons. Please enjoy in moderation.",
+    },
+  ];
+
+  const partners = [...defaultPartners, ...partnersList];
 
   return (
-    <React.Fragment>
-        <div className=' gap-5 py-5 flex flex-col items-center justify-center md:grid md:grid-cols-2 '>
-            {/* <br /> */}
-            <div className=' w-fit bg-gray-200 mx-10 my-2 rounded-t-md px-5 py-4'>
-                <h1 className=' text-center text-lg font-semibold py-2 px-1'>The Balvenie</h1>
-                <section className=' md:flex-row md:items-center md:gap-10 md:justify-center flex flex-col gap-3 items-center text-center'>
-                    <main>
-                        <img className=' rounded-md w-56' loading='lazy' src={balvenie} alt="Balvenie Whisky"/>
-                    </main>
-                    <article className=' md:w-60 md:text-lg md:leading-7  text-sm font-semibold'>
-                        Savor the rich flavors of our single malt scotch whisky, expertly crafted by William Grant & Sons. Please enjoy in moderation
-                    </article>
-                </section>
-            </div>
-            {
-                partnersList.length==0?<p></p>:
-                partnersList.map((each_partner,index)=>{
-                    return(
-                        <div key={index+"##$$"} className='  bg-gray-200 mx-10 my-2 rounded-t-md px-5 py-4'>
-                            <h1 className=' text-center text-lg font-semibold py-2 px-1'>{each_partner.brand_name}</h1>
-                            <section className=' md:flex-row md:items-center md:gap-10 md:justify-center flex flex-col gap-3 items-center text-center'>
-                                <main><img className=' w-56' loading='lazy' src={each_partner.imageUrl} alt={each_partner.brand_name}/></main>
-                                <article className=' md:w-60 md:text-lg md:leading-7  text-sm font-semibold'>{each_partner.description}</article>
-                            </section>
-                        </div>
-                    )
-                })
-            }
+    <section className="px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+      {partners.map((partner, index) => (
+        <div
+          key={index}
+          className="bg-gray-200 rounded-lg px-6 py-8 shadow-sm hover:shadow-lg transition duration-300"
+        >
+          <h2 className="text-center text-lg font-semibold mb-4">
+            {partner.brand_name}
+          </h2>
+          <div className="flex flex-col md:flex-row items-center gap-5 text-center md:text-left">
+            <img
+              className="rounded-md w-56 object-cover"
+              loading="lazy"
+              src={partner.imageUrl}
+              alt={partner.brand_name}
+            />
+            <p className="md:w-60 md:text-lg md:leading-7 text-sm font-medium italic">
+              {partner.description}
+            </p>
+          </div>
         </div>
-    </React.Fragment>
-  )
+      ))}
+    </section>
+  );
 }
 
-export default Brands
-
+export default Brands;

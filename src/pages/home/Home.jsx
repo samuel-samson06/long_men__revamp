@@ -8,8 +8,8 @@ function Home() {
         <div>
             <main>
                 <HeroSection/>
-                <Events/>
                 <Focus/>
+                <Events/>
             </main>
 
         </div>

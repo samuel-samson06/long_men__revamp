@@ -42,12 +42,26 @@ function Events() {
     cssEase: "linear",
     adaptiveHeight:true,
     
+  responsive: [
+    {
+      breakpoint: 750, // at < 950px
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+    {
+      breakpoint: 800, // from 950px and up
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+  ],
   };
 
 
   return (
     <>
-      <div className=" shadow-sm py-10 bg-gray-100">
+      <div className=" shadow-sm py-10 bg-white">
         <h1 className=" text-center text-3xl font-semibold">Signature Experiences</h1>
         
         <br />
@@ -68,10 +82,10 @@ function Events() {
           </div>
         </div>
       </div>
-      <div className=" bg-white flex flex-col gap-3 py-10 px-3">
+      <div className=" bg-gray-100 flex flex-col gap-3 py-10 px-3">
         <p className=" text-base text-center">Engage your senses</p>
         <p className=" text-center text-lg font-sans">Highlights from Enagage your senses where we engaged the 5 senses of our guests in the best way</p>
-        <video src={video1} autoPlay controls className=" " ></video>
+        <video src={video1}  controls className=" " ></video>
       </div>
     </>
   )

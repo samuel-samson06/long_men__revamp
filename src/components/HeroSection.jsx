@@ -47,7 +47,7 @@ function HeroSection() {
                 </div>
             </Slider>
         </div>
-        <p className=" text-center font-semibold px-5 py-4">
+        <p className=" text-center font-semibold px-5 py-8 md:py-10">
             At Longmen, we celebrate the finer things in life – the art of savoring a perfectly rolled cigar, the warmth of a well-aged whisky, and the joy of shared experiences. Our passion lies in curating exceptional moments for aficionados, connoisseurs, and seekers of refined pleasures.
         </p>
     </div>
