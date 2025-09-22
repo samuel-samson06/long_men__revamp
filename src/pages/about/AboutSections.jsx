@@ -1,4 +1,3 @@
-// AboutSections.jsx
 import { Fragment } from "react";
 
 function AboutSections() {
@@ -17,21 +16,21 @@ function AboutSections() {
       id: 3,
       title: "Exclusivity",
       text: "What makes Longmen truly unique is not just our events, but our ethos. We are not open to everyone — only to those who share our respect for craft and culture. Every experience is by invitation or bespoke request, ensuring privacy, intimacy, and authenticity. In a world of noise, Longmen is a sanctuary of refinement.",
-    }
+    },
   ];
 
   return (
     <Fragment>
-      <section className="px-6 py-12 space-y-12 bg-white">
+      <section className="px-6 md:px-12 lg:px-20 py-12 space-y-16 bg-white">
         {sections.map((sec) => (
           <div
             key={sec.id}
             className="max-w-4xl mx-auto text-center md:text-left"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
               {sec.title}
             </h2>
-            <p className="text-gray-700 leading-relaxed italic md:text-lg">
+            <p className="text-gray-700 leading-relaxed italic text-sm sm:text-base md:text-lg">
               {sec.text}
             </p>
           </div>

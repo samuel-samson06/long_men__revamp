@@ -27,16 +27,16 @@ function Services() {
   ];
 
   return (
-    <section className="border-b-[3px] border-black px-6 py-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+    <section className="border-b-[3px] border-black px-6 md:px-12 lg:px-20 py-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
       {services.map((service) => (
         <div
           key={service.id}
           className="bg-gray-200 px-5 py-6 rounded-md shadow-sm hover:shadow-lg transition duration-300"
         >
-          <h2 className="text-xl font-semibold font-serif mb-3">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-semibold font-serif mb-3">
             {service.id}.) {service.heading}
           </h2>
-          <p className="italic font-medium text-sm md:text-base leading-relaxed">
+          <p className="italic font-medium text-sm md:text-base lg:text-lg leading-relaxed">
             {service.write_up}
           </p>
         </div>
